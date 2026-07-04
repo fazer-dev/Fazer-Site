@@ -1,0 +1,54 @@
+
+
+body {
+    background-color: #1c212e;
+    color: #ffffff;
+    text-align:center;
+    margin: 0;
+
+    background-image: radial-gradient(#ffffff22 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+#Luke {
+    background: linear-gradient(200deg, #ffbe00 0%, #41fc54 50%, #338ffe 100%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    font-family: lacquer, system-ui;}
+
+h2 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    font-family: lacquer, system-ui;
+}
+
+.OnPage {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 1rem);
+    font-weight: 900;
+    font-family: lacquer, system-ui;
+    padding-right: clamp(5rem, 4vw, 5rem);
+    text-align: right;
+    color: #575757
+}
+
+hr {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #3f4a66;
+}
