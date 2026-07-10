@@ -1,10 +1,16 @@
-
+:root {
+    --text-color-regular: #c6ffcd;
+}
 
 body {
     background-color: #1c212e;
-    color: #ffffff;
+    color: var(--text-color-regular);
     text-align:center;
     margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     background-image: radial-gradient(#ffffff22 1px, transparent 1px);
     background-size: 20px 20px;
@@ -66,6 +72,7 @@ hr {
     gap: 4rem;
     width: 100%;
     background-color: #243357;
+    padding-bottom: 20px;
 }
 
 h3 {
@@ -74,7 +81,7 @@ h3 {
     font-size: 2rem;
     font-weight: 900;
     font-family: lacquer, system-ui;
-    color: white;
+    color: var(--text-color-regular);
     width: 100%;
 }
 
@@ -119,4 +126,23 @@ h3 {
     height: auto;
     margin-bottom: 2rem;
     filter: drop-shadow(0px 0px 7px #41fc54);
+}
+
+.underaboat{
+    padding-top: 10vh;
+    background-color: #243357;
+}
+
+#aboataboat{
+    padding-left: 0px;
+    font-size: 3vh;
+    text-align: center;
+    padding-bottom: 6vh;
+}
+
+#moiboat{
+    text-align: center;
+    color: var(--text-color-regular);
+    width: 50vh;
+    margin: 0 auto;
 }
