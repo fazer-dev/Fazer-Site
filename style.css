@@ -22,10 +22,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-size: clamp(3rem, 10vw, 8rem);
-    font-weight: 900;
-    font-family: lacquer, system-ui;}
-
+}
 h2 {
     font-size: clamp(3rem, 10vw, 8rem);
     font-weight: 900;
@@ -129,6 +126,7 @@ h3 {
 }
 
 .underaboat{
+    padding-left: 0px;
     padding-top: 10vh;
     background-color: #243357;
 }
@@ -141,8 +139,65 @@ h3 {
 }
 
 #moiboat{
+    padding-left: 0px;
     text-align: center;
     color: var(--text-color-regular);
     width: 50vh;
     margin: 0 auto;
+}
+
+
+
+#wave2{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg); 
+    transform: rotate(180deg);
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 0px;
+}
+
+
+.titlecan{
+    background: linear-gradient(45deg, #ffbe00 0%, #41fc54 45%, #338ffe 75%);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+
+/*BELOW IS THE PROJECT CAROUSELL CODE*/
+
+.pro{
+    max-width: 1000px;
+    position: relative;
+    margin:auto;
+    text-align:center;
+}
+
+.project {
+    margin: 0, auto;
+    padding:0;
+    margin:0;
+    display: none;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
