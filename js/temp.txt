@@ -1,0 +1,77 @@
+let current = 2;
+let items = 3;
+const pro = document.querySelector(".pro");
+let wheelBlocked = false;
+
+
+
+if (pro) {
+    pro.addEventListener("wheel", onWheel, { passive: false });
+}
+
+function onWheel(event) {
+    if (!pro || !pro.contains(event.target)) return;
+    event.preventDefault();
+    if (wheelBlocked) return;
+
+    if (event.deltaY > 0) {
+        nextClick();
+    } else if (event.deltaY < 0) {
+        prevClick();
+    }
+}
+
+updateDisplay();
+//3 is the number of elements in the thingy.
+/*for(let i = 1; i <= items; i++){
+  document.getElementById(i).style.display = "none";
+}*/
+
+
+function prevClick(){
+    current--;
+    rotateLeft();
+  updateDisplay();
+}
+
+function nextClick(){
+   
+  current++
+  rotateRight(current - 1);   
+  updateDisplay();
+}
+
+function rotateLeft() {
+    const first = pro.querySelector(".project");
+    pro.appendChild(first);
+}
+
+function rotateRight(i) {
+  const container = document.querySelector(".pro");
+  const element = document.getElementById(i);
+  container.appendChild(element);
+}
+
+
+function updateDisplay() {
+    const projects = pro.querySelectorAll(".project");
+
+    projects.forEach(project => {
+        project.style.width = "10vw";
+    });
+
+    if (projects.length >= 3) {
+        projects[1].style.width = "20vw";
+    }
+}
+
+function rotateLeft() {
+    const first = pro.querySelector(".project");
+    pro.appendChild(first);
+}
+
+function rotateRight() {
+    const projects = pro.querySelectorAll(".project");
+    const last = projects[projects.length - 1];
+    pro.prepend(last);
+}

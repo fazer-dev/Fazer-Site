@@ -1,23 +1,24 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+const carousel = document.querySelector(".pro");
+const projects = document.querySelectorAll(".project");
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+let snapTimeout;
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+carousel.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    carousel.style.scrollSnapType = "none";
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("project");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex-1].style.display = "block";
-}
+    let multiplier = 1;
+    if (e.deltaMode === 1) multiplier = 125;
+    if (e.deltaMode === 2) multiplier = window.innerHeight;
+
+    const delta = e.deltaY * multiplier;
+    carousel.scrollLeft += delta;
+    
+
+    clearTimeout(snapTimeout);
+    snapTimeout = setTimeout(() => {
+        carousel.style.scrollSnapType = "x mandatory";
+    }, 150);
+}, { passive: false });
+
+
