@@ -12,8 +12,16 @@ body {
     -ms-user-select: none;
     user-select: none;
     overflow-x: hidden;
+    overflow-y: scroll;
     background-image: radial-gradient(#ffffff22 1px, transparent 1px);
     background-size: 20px 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
 }
 
 #Luke {
@@ -168,6 +176,7 @@ h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin-top: -10vh;
 }
 
 #moreaboatit {
@@ -178,6 +187,13 @@ h3 {
 }
 
 
+#cellphone{
+    filter: drop-shadow(0px 0px 3px #41fc54);
+    width: 50vw;
+    margin: 0 auto;
+    font-size: 4vw;
+}
+
 /*BELOW IS THE PROJECT CAROUSELL CODE*/
 .pro {
     display: flex;
@@ -186,7 +202,7 @@ h3 {
     overflow-y: hidden;
     width: 100%;
     flex-wrap: nowrap;
-    height: 65vh;
+    height: 30vw;
     scroll-snap-type: x proximity;
     align-items: center;
 }

@@ -47,14 +47,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function resize() {
     const rect = target.getBoundingClientRect();
-    width = Math.max(160, rect.width);
-    height = Math.max(120, rect.height);
-    devicePixelRatioValue = window.devicePixelRatio || 1;
+    const newWidth = Math.max(160, rect.width);
+    const newHeight = Math.max(120, rect.height);
+    const newDPR = window.devicePixelRatio || 1;
+
+    // Save old values to avoid abrupt speed changes on resize
+    const oldWidth = width;
+    const oldHeight = height;
+    const oldBallSpeed = state.ballSpeed;
+
+    width = newWidth;
+    height = newHeight;
+    devicePixelRatioValue = newDPR;
     canvas.width = Math.round(width * devicePixelRatioValue);
     canvas.height = Math.round(height * devicePixelRatioValue);
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     ctx.setTransform(devicePixelRatioValue, 0, 0, devicePixelRatioValue, 0, 0);
+
     state.paddleHeight = Math.max(60, height * 0.18);
     state.paddleWidth = Math.max(10, width * 0.015);
     state.maxPaddleSpeed = Math.max(220, height * 2);
@@ -62,7 +72,30 @@ document.addEventListener("DOMContentLoaded", () => {
     state.ballSpeed = Math.max(240, width * 0.45);
     state.left.x = 14;
     state.right.x = width - state.paddleWidth - 14;
-    resetState();
+
+    // If this is the first resize (initial setup), initialize state
+    if (!oldWidth || !oldHeight) {
+      resetState();
+      return;
+    }
+
+    // Scale velocities to preserve speed proportionally when ballSpeed changed
+    if (oldBallSpeed > 0) {
+      const speedScale = state.ballSpeed / oldBallSpeed;
+      state.ball.vx *= speedScale;
+      state.ball.vy *= speedScale;
+    }
+
+    // Keep paddles' relative vertical position
+    state.left.y = (state.left.y / Math.max(1, oldHeight)) * height;
+    state.right.y = (state.right.y / Math.max(1, oldHeight)) * height;
+    state.left.y = clamp(state.left.y, 0, height - state.paddleHeight);
+    state.right.y = clamp(state.right.y, 0, height - state.paddleHeight);
+
+    // If ball is out of bounds after resize, reset to center
+    if (state.ball.x + state.ball.r < 0 || state.ball.x - state.ball.r > width || state.ball.y + state.ball.r < 0 || state.ball.y - state.ball.r > height) {
+      resetState();
+    }
   }
 
   function draw() {

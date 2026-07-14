@@ -4,6 +4,17 @@ const projects = document.querySelectorAll(".project");
 let snapTimeout;
 
 carousel.addEventListener("wheel", (e) => {
+    const atStart = carousel.scrollLeft <= 0;
+    const atEnd = Math.ceil(carousel.scrollLeft + carousel.clientWidth) >= carousel.scrollWidth;
+
+    if ((atStart && e.deltaY < 0) || (atEnd && e.deltaY > 0)) {
+        clearTimeout(snapTimeout);
+        snapTimeout = setTimeout(() => {
+            carousel.style.scrollSnapType = "x mandatory";
+        }, 150);
+        return;
+    }
+
     e.preventDefault();
     carousel.style.scrollSnapType = "none";
 
@@ -13,7 +24,6 @@ carousel.addEventListener("wheel", (e) => {
 
     const delta = e.deltaY * multiplier;
     carousel.scrollLeft += delta;
-    
 
     clearTimeout(snapTimeout);
     snapTimeout = setTimeout(() => {
