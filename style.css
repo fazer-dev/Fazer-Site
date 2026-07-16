@@ -71,7 +71,7 @@ hr {
 
 #wave1 {
     display: block;
-    width: 100%;
+    width: 100vw;
     height: auto;
     margin-top: -5vh;
 }
@@ -169,7 +169,7 @@ h3 {
     -moz-transform: rotate(180deg); 
     transform: rotate(180deg);
     display: block;
-    width: 100%;
+    width: 100vw;
     height: auto;
     padding-bottom: 0px;
 }
@@ -346,3 +346,119 @@ section{
     color: #c269c5;
     font-size: 4vw;
 }
+
+
+@media (max-width: 600px) {
+
+        html {
+        overflow-x: hidden;
+        width: 100%;
+        margin:0;
+        padding:0;
+    }
+
+
+    .OnPage {
+        padding-top: 0;
+        margin-top: 0;
+        line-height: 10vh;
+    }
+
+    #Luke {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+
+    h2 {
+        padding: 0px;
+        margin-bottom: 0;
+    }
+
+    p {
+        margin: 5vw;
+    }
+
+    h3 {
+        width: 80vw;
+    }
+
+    #cv {
+        width: 90vw;
+    }
+
+
+
+    #aboataboat {
+        margin: 0 auto;
+    }
+
+    #moiboat {
+        width: 80vw;
+        font-size: 1rem;
+    }
+
+    
+    .titlecan {
+        margin: 0 auto;
+        padding: 0;
+        font-size: 4.5rem;
+    }
+
+    .project {
+        width: 75vw;
+        height: auto;
+    }
+
+    .pro {
+        width: 100vw;
+        height: auto;
+        padding-bottom: 5vh;
+        padding-top: 5vh;
+        gap: 10vw;
+    }
+
+    #cellphone {
+        font-size: 3rem;
+        width: 100vw;
+        padding: 0;
+        margin: 0 auto;
+        padding-bottom: 10vh;
+    }
+
+    .blobbery {
+        width: 80vw;
+        height: 80vw;
+        margin: 0 auto;
+        padding: 0;
+        top: 0vh;
+        left: -15vw;
+    }
+
+    .contacts {
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        margin-top: 7.5vh;
+    }
+    
+    .contacts p {
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        line-height: 2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #cellphone2 {
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        margin-top: 20vh;
+        font-size: 3rem;
+        width: 80vw;
+
+    }
+}
+
