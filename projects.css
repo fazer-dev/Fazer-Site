@@ -190,7 +190,9 @@ h3 {
     margin: 0, auto;
     padding: 0;
     font-size: 4cqh;
-    color: var(--text-color-regular)
+    color: var(--text-color-regular);
+    margin-top: -10vh;
+    margin-bottom: 10vh;
 }
 
 
@@ -240,6 +242,7 @@ h3 {
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 10px;
+    gap: 3vh;
 }
 
 .project img {
@@ -416,6 +419,8 @@ section{
     #Luke {
         padding-top: 0;
         margin-top: 0;
+        margin: 0;
+        padding: 0;
     }
 
 
