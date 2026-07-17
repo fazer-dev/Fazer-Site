@@ -383,7 +383,7 @@ section{
 #pnav h2{
     margin: 0;
     padding: 0.25rem 0.5rem;
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: 4rem;
     font-family: var(--font-family-main);
     color: var(--text-color-regular);
     background: transparent;
@@ -517,5 +517,34 @@ section{
         width: 80vw;
 
     }
+
+
+
+    #Luke {
+        margin-top: 7.5vh;
+        padding: 0;
+    }
+
+    #moreaboatit {
+        margin: 0 auto;
+    }
+
+    .pgrid{
+        display: block;
+        width: auto;
+    }
+
+    .project{
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .project img {
+        width: 75vw;
+    }
+
+
+    
+
 }
 
