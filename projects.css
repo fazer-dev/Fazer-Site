@@ -228,9 +228,6 @@ h3 {
 }
 
 .project {
-    flex: 0 0 auto;
-    width: 40vw;
-    scroll-snap-align: center;
     transition: transform 0.3s ease;
 
 }
@@ -239,12 +236,16 @@ h3 {
     transform: scale(1.15);
 }
 
+.pgrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
 .project img {
-    display: block;
-    width: 100%;
-    height: auto;
     border-radius: 10px;
     filter: drop-shadow( 0px 0px 8px #41fc54);
+    width: 30vw;
 }
 
 .project.active {
