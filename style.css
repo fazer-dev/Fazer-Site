@@ -195,10 +195,11 @@ h3 {
 
 
 #cellphone{
-    filter: drop-shadow(0px 0px 3px #41fc54);
+    filter: drop-shadow(0px 0px 3px #c269c5);
     width: 50vw;
     margin: 0 auto;
     font-size: 4vw;
+    color: #c269c5;
 }
 
 /*BELOW IS THE PROJECT CAROUSELL CODE*/
